@@ -1,5 +1,8 @@
-# os-code
-# ALTA3 COURSE - WORK - PROJECTS
+# OS-CODE - ALTA3 REPOSITORY
+----------------------------
 
-- My personal configurations for the duration of this course
-------------------------------------------------------------
+# Contents
+* Completed work
+
+# OS Custom Configurations
+* Custom files
