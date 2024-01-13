@@ -34,8 +34,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Python][tkinter][https://www.tcl.tk/man/tcl/TkCmd/colors.html]]
-* [![Python][ttkbootstrap][https://ttkbootstrap.readthedocs.io/en/latest/themes/themecreator/]]
+* [![tkinter][https://www.tcl.tk/man/tcl/TkCmd/colors.html]]
+* [![ttkbootstrap][https://ttkbootstrap.readthedocs.io/en/latest/themes/themecreator/]]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
