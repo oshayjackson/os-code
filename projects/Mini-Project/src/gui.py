@@ -1,29 +1,39 @@
-#!/usr/bin/env python3
-
 import tkinter as tk
-from tkinter import *
-from turtle import title
-import ttkbootstrap as ttk
-from ttkbootstrap.constants import *
-import ttkcreator as tc
-from ttkcreator import *
+from tkinter import ttk
 
+import ttkbootstrap as boot
 
-class Ui(tk.Tk, ttk.Frame):
-    def __init__(self):
-        ut = tc(self, Menu())
-        super().__init__(ttk.Window())
+class Gui(ttk.Frame):
+    def __init__(self, master=None, **kwargs):
+        super().__init__(master, **kwargs)
+        self.label = ttk.Label(self, text="Hello World!")
+        self.label.pack(padx=10, pady=10)
+    
+        self.button = ttk.Button(self, text="Click me!", command=self.on_button_click)
+        self.button.pack()
 
-        self.style = ttk.Style(title=None, )
-        ttk.Frame.__init__(self, self)
+        # Frame to display clicked number
+        self.frame = ttk.Frame(self)
+        self.frame.pack(side=tk.LEFT, padx=10)
 
+        self.clicked = 0
+        self.clicked_label = ttk.Label(self.frame, text=f'Button clicked: {self.clicked} times')
+        self.clicked_label.pack()
 
-if __name__ == "__main__":
-    u = Ui()
-    u.mainloop()
+    def on_button_click(self):
+        self.clicked += 1
+        self.label.config(text=f'Button clicked: {self.clicked} times')
 
-"""
-      (title: str = "ttkbootstrap", themename: str = "litera", iconphoto: str = '', size: Any | None = None, position: Any | None = None, minsize: Any | None = None, maxsize: Any | None = None, resizable: Any | None = None, hdpi: bool = True, scaling: Any | None = None, transient: Any | None = None, overrideredirect: bool = False, alpha: float = 1) -> None
-      
-      (master: Misc | None = None, cnf: dict[str, Any] | None = {}, *, activebackground: str = ..., activeborderwidth: _ScreenUnits = ..., activeforeground: str = ..., background: str = ..., bd: _ScreenUnits = ..., bg: str = ..., border: _ScreenUnits = ..., borderwidth: _ScreenUnits = ..., cursor: _Cursor = ..., disabledforeground: str = ..., fg: str = ..., font: _FontDescription = ..., foreground: str = ..., name: str = ..., postcommand: (() -> object) | str = ..., relief: _Relief = ..., selectcolor: str = ..., takefocus: _TakeFocusValue = ..., tearoff: int = ..., tearoffcommand: ((str, str) -> object) | str = ..., title: str = ..., type: Literal['menubar', 'tearoff', 'normal'] = ...) -> None
-"""
+        # Update the label in the frame
+        self.clicked_label.config(text=f'Button clicked: {self.clicked} times')
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    root.title("Python Gui")
+  
+    boot.Style(theme='solar')
+  
+    user_gui = Gui(root)
+    user_gui.pack(fill=tk.BOTH, expand=True)
+
+    root.mainloop()
