@@ -1,6 +1,9 @@
 __pycache__/
 sandbox/
 *.pyc
-env/
+.env/bin
+.env/lib
+.env/include
+.env/pyvenv.cfg
 *.log
 .vscode/
