@@ -1,5 +1,7 @@
 __pycache__/
+sandbox/
 *.pyc
-.env/
+env/
 *.log
 .vscode/
+structure.txt/
