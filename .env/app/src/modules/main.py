@@ -21,7 +21,7 @@ def relative_to_assets(path: str) -> Path:
 
 def main():
     window = Tk()
-    window.title("Nasa Api")
+    window.title("Nasa Apod Api")
     window.geometry("600x800")
     window.configure(bg="#2F3A4D")
     # <br>
